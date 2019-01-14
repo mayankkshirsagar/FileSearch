@@ -18,7 +18,7 @@ public class FileSearchApp {
 	String path;
 	String regex;
 	String zipFileName;
-	
+	static ArrayList<File> filelist=new ArrayList<>();
 	public static void main(String args[]) throws IOException
 	{
 		Scanner sc=new Scanner(System.in);
@@ -63,9 +63,9 @@ public class FileSearchApp {
 	
 	public ArrayList<File> readFiles(String filepath) throws IOException
 	{
-		File file=new File(this.getPath());
+		File file=new File(filepath);
 		File[] files=file.listFiles();
-		ArrayList<File> filelist=new ArrayList<>();
+		
 		FileOutputStream f=new FileOutputStream(zipFileName);
 		ZipOutputStream zos=new ZipOutputStream(f);
 		
